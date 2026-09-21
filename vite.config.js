@@ -16,5 +16,10 @@ export default defineConfig({
 			// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 			adapter: adapter()
 		})
-	]
+	],
+	// Add this server block here 👇
+	server: {
+		port: 6967, // Change this to whatever port you want
+		strictPort: false
+	}
 });

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog store="Corner Books" updated="2026-09-01">
+  <book id="bk101" lang="en">
+    <title>The Quiet Harbor</title>
+    <author>Asha Rao</author>
+    <genre>fiction</genre>
+    <price>7.50</price>
+    <stock>0</stock>
+    <year>1995</year>
+  </book>
+  <book id="bk102" lang="en">
+    <title>Salt and Ember</title>
+    <author>Liam Ortiz</author>
+    <genre>travel</genre>
+    <price>21.50</price>
+    <stock>13</stock>
+    <year>2002</year>
+  </book>
+  <book id="bk103" lang="en">
+    <title>Paper Lanterns</title>
+    <author>Mei Tanaka</author>
+    <genre>history</genre>
+    <price>12.50</price>
+    <stock>26</stock>
+    <year>2009</year>
+  </book>
+  <book id="bk104" lang="en">
+    <title>A Map of Small Things</title>
+    <author>Noor Haddad</author>
+    <genre>science</genre>
+    <price>26.50</price>
+    <stock>39</stock>
+    <year>2016</year>
+  </book>
+  <book id="bk105" lang="en">
+    <title>Northbound</title>
+    <author>Ivan Petrov</author>
+    <genre>poetry</genre>
+    <price>17.50</price>
+    <stock>52</stock>
+    <year>2023</year>
+  </book>
+  <book id="bk106" lang="en">
+    <title>The Glass Orchard</title>
+    <author>Zara Ali</author>
+    <genre>fiction</genre>
+    <price>8.50</price>
+    <stock>5</stock>
+    <year>2000</year>
+  </book>
+  <book id="bk107" lang="en">
+    <title>Winter Arithmetic</title>
+    <author>Tom Becker</author>
+    <genre>travel</genre>
+    <price>22.50</price>
+    <stock>18</stock>
+    <year>2007</year>
+  </book>
+  <book id="bk108" lang="en">
+    <title>Borrowed Light</title>
+    <author>Lucia Conti</author>
+    <genre>history</genre>
+    <price>13.50</price>
+    <stock>31</stock>
+    <year>2014</year>
+  </book>
+  <book id="bk109" lang="en">
+    <title>The Last Ferry</title>
+    <author>Asha Rao</author>
+    <genre>science</genre>
+    <price>27.50</price>
+    <stock>44</stock>
+    <year>2021</year>
+  </book>
+  <book id="bk110" lang="en">
+    <title>Clockwork Summer</title>
+    <author>Liam Ortiz</author>
+    <genre>poetry</genre>
+    <price>18.50</price>
+    <stock>57</stock>
+    <year>1998</year>
+  </book>
+  <book id="bk111" lang="en">
+    <title>Slow Rivers</title>
+    <author>Mei Tanaka</author>
+    <genre>fiction</genre>
+    <price>9.50</price>
+    <stock>10</stock>
+    <year>2005</year>
+  </book>
+  <book id="bk112" lang="en">
+    <title>The Tin Garden</title>
+    <author>Noor Haddad</author>
+    <genre>travel</genre>
+    <price>23.50</price>
+    <stock>23</stock>
+    <year>2012</year>
+  </book>
+  <book id="bk113" lang="en">
+    <title>Second Monsoon</title>
+    <author>Ivan Petrov</author>
+    <genre>history</genre>
+    <price>14.50</price>
+    <stock>36</stock>
+    <year>2019</year>
+  </book>
+  <book id="bk114" lang="en">
+    <title>Letters to Nobody</title>
+    <author>Zara Ali</author>
+    <genre>science</genre>
+    <price>28.50</price>
+    <stock>49</stock>
+    <year>1996</year>
+  </book>
+  <book id="bk115" lang="en">
+    <title>Ink and Iron</title>
+    <author>Tom Becker</author>
+    <genre>poetry</genre>
+    <price>19.50</price>
+    <stock>2</stock>
+    <year>2003</year>
+  </book>
+  <book id="bk116" lang="en">
+    <title>The Far Shelf</title>
+    <author>Lucia Conti</author>
+    <genre>fiction</genre>
+    <price>10.50</price>
+    <stock>15</stock>
+    <year>2010</year>
+  </book>
+  <book id="bk117" lang="en">
+    <title>Blue Hour</title>
+    <author>Asha Rao</author>
+    <genre>travel</genre>
+    <price>24.50</price>
+    <stock>28</stock>
+    <year>2017</year>
+  </book>
+  <book id="bk118" lang="en">
+    <title>Nine Bridges</title>
+    <author>Liam Ortiz</author>
+    <genre>history</genre>
+    <price>15.50</price>
+    <stock>41</stock>
+    <year>2024</year>
+  </book>
+  <book id="bk119" lang="en">
+    <title>The Copper Kettle</title>
+    <author>Mei Tanaka</author>
+    <genre>science</genre>
+    <price>29.50</price>
+    <stock>54</stock>
+    <year>2001</year>
+  </book>
+  <book id="bk120" lang="en">
+    <title>Low Tide</title>
+    <author>Noor Haddad</author>
+    <genre>poetry</genre>
+    <price>20.50</price>
+    <stock>7</stock>
+    <year>2008</year>
+  </book>
+  <book id="bk121" lang="en">
+    <title>A Field Guide to Rain</title>
+    <author>Ivan Petrov</author>
+    <genre>fiction</genre>
+    <price>11.50</price>
+    <stock>20</stock>
+    <year>2015</year>
+  </book>
+  <book id="bk122" lang="en">
+    <title>The Long Counter</title>
+    <author>Zara Ali</author>
+    <genre>travel</genre>
+    <price>25.50</price>
+    <stock>33</stock>
+    <year>2022</year>
+  </book>
+  <book id="bk123" lang="en">
+    <title>Thread and Needle</title>
+    <author>Tom Becker</author>
+    <genre>history</genre>
+    <price>16.50</price>
+    <stock>46</stock>
+    <year>1999</year>
+  </book>
+  <book id="bk124" lang="en">
+    <title>Half a Moon</title>
+    <author>Lucia Conti</author>
+    <genre>science</genre>
+    <price>7.50</price>
+    <stock>59</stock>
+    <year>2006</year>
+  </book>
+  <book id="bk125" lang="en">
+    <title>The Orange Room</title>
+    <author>Asha Rao</author>
+    <genre>poetry</genre>
+    <price>21.50</price>
+    <stock>12</stock>
+    <year>2013</year>
+  </book>
+  <book id="bk126" lang="en">
+    <title>Stone Soup Street</title>
+    <author>Liam Ortiz</author>
+    <genre>fiction</genre>
+    <price>12.50</price>
+    <stock>25</stock>
+    <year>2020</year>
+  </book>
+  <book id="bk127" lang="en">
+    <title>Quiet Machines</title>
+    <author>Mei Tanaka</author>
+    <genre>travel</genre>
+    <price>26.50</price>
+    <stock>38</stock>
+    <year>1997</year>
+  </book>
+  <book id="bk128" lang="en">
+    <title>The Third Bell</title>
+    <author>Noor Haddad</author>
+    <genre>history</genre>
+    <price>17.50</price>
+    <stock>51</stock>
+    <year>2004</year>
+  </book>
+  <book id="bk129" lang="en">
+    <title>Marigold Lane</title>
+    <author>Ivan Petrov</author>
+    <genre>science</genre>
+    <price>8.50</price>
+    <stock>4</stock>
+    <year>2011</year>
+  </book>
+  <book id="bk130" lang="en">
+    <title>Open Water</title>
+    <author>Zara Ali</author>
+    <genre>poetry</genre>
+    <price>22.50</price>
+    <stock>17</stock>
+    <year>2018</year>
+  </book>
+  <book id="bk131" lang="en">
+    <title>The Paper Boat</title>
+    <author>Tom Becker</author>
+    <genre>fiction</genre>
+    <price>13.50</price>
+    <stock>30</stock>
+    <year>1995</year>
+  </book>
+  <book id="bk132" lang="en">
+    <title>Dust and Honey</title>
+    <author>Lucia Conti</author>
+    <genre>travel</genre>
+    <price>27.50</price>
+    <stock>43</stock>
+    <year>2002</year>
+  </book>
+  <book id="bk133" lang="en">
+    <title>Evening Post</title>
+    <author>Asha Rao</author>
+    <genre>history</genre>
+    <price>18.50</price>
+    <stock>56</stock>
+    <year>2009</year>
+  </book>
+  <book id="bk134" lang="en">
+    <title>The Narrow Door</title>
+    <author>Liam Ortiz</author>
+    <genre>science</genre>
+    <price>9.50</price>
+    <stock>9</stock>
+    <year>2016</year>
+  </book>
+  <book id="bk135" lang="en">
+    <title>Station Road</title>
+    <author>Mei Tanaka</author>
+    <genre>poetry</genre>
+    <price>23.50</price>
+    <stock>22</stock>
+    <year>2023</year>
+  </book>
+  <book id="bk136" lang="en">
+    <title>Small Hours</title>
+    <author>Noor Haddad</author>
+    <genre>fiction</genre>
+    <price>14.50</price>
+    <stock>35</stock>
+    <year>2000</year>
+  </book>
+  <book id="bk137" lang="en">
+    <title>The Kite Maker</title>
+    <author>Ivan Petrov</author>
+    <genre>travel</genre>
+    <price>28.50</price>
+    <stock>48</stock>
+    <year>2007</year>
+  </book>
+  <book id="bk138" lang="en">
+    <title>Seven Lamps</title>
+    <author>Zara Ali</author>
+    <genre>history</genre>
+    <price>19.50</price>
+    <stock>1</stock>
+    <year>2014</year>
+  </book>
+  <book id="bk139" lang="en">
+    <title>Cold Tea</title>
+    <author>Tom Becker</author>
+    <genre>science</genre>
+    <price>10.50</price>
+    <stock>14</stock>
+    <year>2021</year>
+  </book>
+  <book id="bk140" lang="en">
+    <title>The Green Ledger</title>
+    <author>Lucia Conti</author>
+    <genre>poetry</genre>
+    <price>24.50</price>
+    <stock>27</stock>
+    <year>1998</year>
+  </book>
+</catalog>

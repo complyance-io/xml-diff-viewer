@@ -1,31 +1,37 @@
 <script>
+
+    // setup the import and state variables
     import { xmlNormalizer } from '$lib/xmlNormalizer';
     import diffMatchPatch from 'diff-match-patch';
-
     let originalXml = $state('');
     let modifiedXml = $state('');
-    
-    const dmp = new diff_match_patch();
 
-    $: normalizedOrig = normalizeXML(originalXML);
-    $: normalizedMod = normalizeXML(modifiedXML);
+    const dmp = new diffMatchPatch();
 
-    $hasError = normalizedOrig !== normalizedMod;
-    $diff = dmp.diff_main(normalizedOrig, normalizedMod);
-    normalizedOrig.startsWith('Syntax Error') || 
-    normalizedOrig.startsWith('Error') ||
-    normalizedMod.startsWith('Syntax Error') || 
-    normalizedMod.startsWith('Error');
+    // this will re evaulate the when the original or modified xml is changed automatically
+    let normalizedOrig = $derived(originalXml ? xmlNormalizer(originalXml) : '');
+    let normalizedMod = $derived(modifiedXml ? xmlNormalizer(modifiedXml) : '');
 
-    $diffResult = (() => {
-        if hasError originalXml||modifiedXml) return 'null';
-            const diff = dmp.diff_main(normalizedOrig, normalizedMod);
-            dmp.diff_cleanupSemantic(diff);
-            return dmp.diff_prettyHtml(diff);
-        })();
+    //  this checks if the normalization produced an error string
+    let hasError = $derived(
+        normalizedOrig.startsWith('Error') || 
+        normalizedOrig.startsWith('Syntax Error') ||
+        normalizedMod.startsWith('Error') || 
+        normalizedMod.startsWith('Syntax Error')
+    );
 
+    // computes the html diff
+    let diffResult = $derived.by(() => {
+        if (hasError || !originalXml || !modifiedXml) return null;
+        
+        const diff = dmp.diff_main(normalizedOrig, normalizedMod);
+        dmp.diff_cleanupSemantic(diff);
+        return dmp.diff_prettyHtml(diff);
+    });
+
+    // this function handles the file upload
     function handleFileupload(event, target) {
-        const file = event.target.files[0];
+        const file = event.target.files?.[0];
         if (!file) return;
         const reader = new FileReader();
         reader.onload = (e) => {

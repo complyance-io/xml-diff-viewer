@@ -9,8 +9,8 @@
     const dmp = new diffMatchPatch();
 
     // this will re evaulate the when the original or modified xml is changed automatically
-    let normalizedOrig = $derived(originalXml ? xmlNormalizer(originalXml) : '');
-    let normalizedMod = $derived(modifiedXml ? xmlNormalizer(modifiedXml) : '');
+    let normalizedOrig = $derived(originalXml ? normalizeXML(originalXml) : '');
+    let normalizedMod = $derived(modifiedXml ? normalizeXML(modifiedXml) : '');
 
     //  this checks if the normalization produced an error string
     let hasError = $derived(

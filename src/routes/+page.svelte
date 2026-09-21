@@ -59,10 +59,12 @@
         <label>
             Original XML
             <input type="file" accept=".xml" onchange={(e) => handleFileupload(e, 'original')} />
+            <textarea bind:value={originalXml} rows="10" cols="50" placeholder="or paste XML here"></textarea>
         </label>
         <label>
             Modified XML
             <input type="file" accept=".xml" onchange={(e) => handleFileupload(e, 'modified')} />
+            <textarea bind:value={modifiedXml} rows="10" cols="50" placeholder="or paste XML here"></textarea>
         </label>
     </section>
     <section class="results-view">
@@ -84,7 +86,7 @@
                 {/each}
             </div>
         {:else if !originalXml || !modifiedXml}
-            <p class="placeholder-text">Upload both XML files to see the differences.</p>
+            <p class="placeholder-text">Upload or paste both XML files to see the differences.</p>
         {:else}
             {#if !normalizedOrig.startsWith('<')}<p class="alert-text">Original: {normalizedOrig}</p>{/if}
             {#if !normalizedMod.startsWith('<')}<p class="alert-text">Modified: {normalizedMod}</p>{/if}
@@ -104,6 +106,12 @@
     .file-upload {
         display: flex;
         gap: 2rem;
+    }
+
+    .file-upload label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .results-view {

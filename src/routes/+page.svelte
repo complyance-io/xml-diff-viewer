@@ -43,7 +43,7 @@
 
     // this function handles the file upload
     function handleFileupload(event, target) {
-        const file = event.target.files?.[0];
+        const file = (event.dataTransfer ?? event.target).files?.[0];
         if (!file) return;
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -59,16 +59,18 @@
         <label>
             Original XML
             <input type="file" accept=".xml" onchange={(e) => handleFileupload(e, 'original')} />
-            <textarea bind:value={originalXml} rows="10" cols="50" placeholder="or paste XML here"></textarea>
+            <textarea bind:value={originalXml} ondragover={(e) => e.preventDefault()} ondrop={(e) => { e.preventDefault(); handleFileupload(e, 'original'); }} rows="10" cols="50" placeholder="drop a file or paste XML here"></textarea>
         </label>
         <label>
             Modified XML
             <input type="file" accept=".xml" onchange={(e) => handleFileupload(e, 'modified')} />
-            <textarea bind:value={modifiedXml} rows="10" cols="50" placeholder="or paste XML here"></textarea>
+            <textarea bind:value={modifiedXml} ondragover={(e) => e.preventDefault()} ondrop={(e) => { e.preventDefault(); handleFileupload(e, 'modified'); }} rows="10" cols="50" placeholder="drop a file or paste XML here"></textarea>
         </label>
     </section>
     <section class="results-view">
         {#if rows.length}
+            //shows percentage of match
+            <p class="match">{Math.round((rows.filter((r) => r.sign === '').length / rows.length) * 100)}% match</p>
             <p class="summary">
                 <span class="plus">+{rows.filter((r) => r.sign === '+').length}</span> /
                 <span class="minus">-{rows.filter((r) => r.sign === '-').length}</span> /
@@ -117,6 +119,12 @@
     .results-view {
         width: 100%;
         max-width: 900px;
+    }
+
+    .match {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0;
     }
 
     .summary .plus {

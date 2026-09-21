@@ -21,12 +21,24 @@
     );
 
     // computes the html diff with wysiwyg formatting (should spell it as wizz-eeee-wig 🙂‍↕️)
-    let diffResult = $derived.by(() => {
-        if (hasError || !originalXml || !modifiedXml) return null;
-        
-        const diff = dmp.diff_main(normalizedOrig, normalizedMod);
-        dmp.diff_cleanupSemantic(diff);
-        return dmp.diff_prettyHtml(diff).replaceAll('&para;', '');
+    let rows = $derived.by(() => {
+        if (hasError || !originalXml || !modifiedXml) return [];
+
+        const a = dmp.diff_linesToChars_(normalizedOrig, normalizedMod);
+        const diff = dmp.diff_main(a.chars1, a.chars2, false);
+        dmp.diff_charsToLines_(diff, a.lineArray);
+
+        const out = [];
+        let oldNo = 1;
+        let newNo = 1;
+        for (const [op, text] of diff) {
+            for (const line of text.replace(/\n$/, '').split('\n')) {
+                if (op === 0) out.push({ sign: '', oldNo: oldNo++, newNo: newNo++, line });
+                if (op === -1) out.push({ sign: '-', oldNo: oldNo++, newNo: '', line });
+                if (op === 1) out.push({ sign: '+', oldNo: '', newNo: newNo++, line });
+            }
+        }
+        return out;
     });
 
     // this function handles the file upload
@@ -54,17 +66,29 @@
         </label>
     </section>
     <section class="results-view">
-        <h2>Comparison Output</h2>
-        <div class="diff-board">
-            {#if diffResult}
-                {@html diffResult}
-            {:else if !originalXml || !modifiedXml}
-                <p class="placeholder-text">Upload both XML files to see the differences.</p>
-            {:else}
-                {#if !normalizedOrig.startsWith('<')}<p class="alert-text">Original: {normalizedOrig}</p>{/if}
-                {#if !normalizedMod.startsWith('<')}<p class="alert-text">Modified: {normalizedMod}</p>{/if}
-            {/if}
-        </div>
+        {#if rows.length}
+            <p class="summary">
+                <span class="plus">+{rows.filter((r) => r.sign === '+').length}</span> /
+                <span class="minus">-{rows.filter((r) => r.sign === '-').length}</span> /
+                {rows.filter((r) => r.sign === '').length} unchanged
+            </p>
+            <h2>Diff Result</h2>
+            <div class="diff-board">
+                {#each rows as row}
+                    <div class="row" class:minus={row.sign === '-'} class:plus={row.sign === '+'}>
+                        <span class="num">{row.oldNo}</span>
+                        <span class="num">{row.newNo}</span>
+                        <span class="sign">{row.sign}</span>
+                        <span class="code">{row.line}</span>
+                    </div>
+                {/each}
+            </div>
+        {:else if !originalXml || !modifiedXml}
+            <p class="placeholder-text">Upload both XML files to see the differences.</p>
+        {:else}
+            {#if !normalizedOrig.startsWith('<')}<p class="alert-text">Original: {normalizedOrig}</p>{/if}
+            {#if !normalizedMod.startsWith('<')}<p class="alert-text">Modified: {normalizedMod}</p>{/if}
+        {/if}
     </section>
 </main>
 
@@ -82,8 +106,44 @@
         gap: 2rem;
     }
 
+    .results-view {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .summary .plus {
+        color: green;
+    }
+
+    .summary .minus {
+        color: red;
+    }
+
     .diff-board {
+        border: 1px solid #999;
+        font-family: monospace;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 3rem 3rem 2rem 1fr;
+    }
+
+    .num {
+        text-align: right;
+        padding-right: 0.5rem;
+        color: #666;
+    }
+
+    .code {
         white-space: pre-wrap;
-        font-family: poppins, sans-serif;
+    }
+
+    .row.minus {
+        background: #ffe6e6;
+    }
+
+    .row.plus {
+        background: #e6ffe6;
     }
 </style>
